@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In / Sign Up</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .container {
+            max-width: 400px;
+            margin: 20px;
+            padding: 30px;
+            background-color: rgba(51, 51, 51, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            animation: fadeIn 2s ease-in-out;
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #ffd700;
+            font-size: 2em;
+            animation: slideInDown 1s ease-in-out;
+        }
+        .btn, .option-btn {
+            display: inline-block;
+            width: 160px;
+            padding: 12px 0;
+            margin: 10px 10px 0;
+            text-align: center;
+            color: #fff;
+            background: linear-gradient(90deg, #6a11cb, #2575fc);
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: transform 0.3s ease, background 0.3s ease;
+            animation: bounceIn 1.5s;
+        }
+        .btn:hover, .option-btn:hover {
+            background: linear-gradient(90deg, #2575fc, #6a11cb);
+            transform: scale(1.1);
+        }
+        .options {
+            display: none;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #666;
+            animation: fadeInUp 1s ease-in-out;
+        }
+        .option-btn {
+            width: 220px;
+            margin: 10px auto;
+            background: linear-gradient(90deg, #f12711, #f5af19);
+        }
+        .option-btn:hover {
+            background: linear-gradient(90deg, #f5af19, #f12711);
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes slideInDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+        @keyframes bounceIn {
+            0%, 20%, 40%, 60%, 80%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Choose an Option</h2>
+        <button class="btn" id="signupBtn">Sign Up</button>
+        <button class="btn" id="signinBtn">Sign In</button>
+
+        <div id="signupOptions" class="options">
+            <h2>Sign Up Options</h2>
+            <button class="option-btn" id="signupGoogleBtn">Sign Up with Google</button>
+            <button class="option-btn" id="signupFacebookBtn">Sign Up with Facebook</button>
+            <button class="option-btn" id="signupEmailBtn">Sign Up with Email</button>
+        </div>
+
+        <div id="signinOptions" class="options">
+            <h2>Sign In Options</h2>
+            <button class="option-btn" id="signinGoogleBtn">Sign In with Google</button>
+            <button class="option-btn" id="signinFacebookBtn">Sign In with Facebook</button>
+            <button class="option-btn" id="signinEmailBtn">Sign In with Email</button>
+        </div>
+    </div>
+
+    <script>
+        // Redirect both main buttons to 1.html
+        document.getElementById("signupBtn").addEventListener("click", function() {
+            window.location.href = "1.html";
+        });
+
+        document.getElementById("signinBtn").addEventListener("click", function() {
+            window.location.href = "1.html";
+        });
+
+        // Toggle Sign Up options
+        document.getElementById("signupBtn").addEventListener("click", function() {
+            document.getElementById("signupOptions").style.display = "block";
+            document.getElementById("signinOptions").style.display = "none";
+        });
+
+        // Toggle Sign In options
+        document.getElementById("signinBtn").addEventListener("click", function() {
+            document.getElementById("signinOptions").style.display = "block";
+            document.getElementById("signupOptions").style.display = "none";
+        });
+    </script>
+</body>
+    </html>
