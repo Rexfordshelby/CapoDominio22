@@ -73,7 +73,7 @@
 <body>
     <div class="container">
         <h2>Fill in Chef Details</h2>
-        <form action="5.html" method="POST">
+        <form id="chefForm" method="POST">
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
@@ -94,8 +94,15 @@
                 <label for="minimumWages">Minimum Wages in Country ($):</label>
                 <input type="text" id="minimumWages" name="minimumWages" required>
             </div>
-            <button type="submit" class="btn">Submit</button>
+            <button type="submit" class="btn" onclick="submitForm()">Submit</button>
         </form>
     </div>
+
+    <script>
+        function submitForm() {
+            document.getElementById("chefForm").action = "5.html";
+            document.getElementById("chefForm").submit();
+        }
+    </script>
 </body>
 </html>
